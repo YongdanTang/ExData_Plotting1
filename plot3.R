@@ -27,13 +27,13 @@ hhpc2 = hhpc2 %>% select(datetime, Global_active_power:Sub_metering_3)
 hhpc2$datetime <- strptime(hhpc2$datetime, format = "%d/%m/%Y %H:%M:%S")
 
 ## 6. draw the 3rd line chart
-## Open PNG device; create 'plot3.png' in the working directory
+## Open PNG device; create 'plot3.png' in the working directory. png() by default creats 480 by 480 pixel png file
 ## Create plot and send the plot to the png device
 ## in this case an empty plot is drawn then adding different legends of lines, and finally annotate them
 ## Close the PNG file device
-## Then plot2.png will be available in the working directory
+## Then plot3.png will be available in the working directory
 
-png(file = "plot3.png") 
+png(file = "plot3.png", bg = "transparent") 
 with(hhpc2, {
     plot(datetime, Sub_metering_1, xlab = "", ylab = "Energy sub metering", type = "n")
     lines(datetime, Sub_metering_1, col = "black")

@@ -28,11 +28,11 @@ hhpc2$datetime <- strptime(hhpc2$datetime, format = "%d/%m/%Y %H:%M:%S")
 
 
 ## 6. draw the 2nd line chart
-## Open PNG device; create 'plot2.png' in the working directory
+## Open PNG device; create 'plot2.png' in the working directory. png() by default creats 480 by 480 pixel png file
 ## Create plot and annotate the plot with col, main and xlab arguments, send the plot to the png device
 ## Close the PNG file device
 ## Then plot2.png will be available in the working directory
 
-png(file = "plot2.png") 
+png(file = "plot2.png", bg = "transparent") 
 with(hhpc2, plot(datetime, Global_active_power, xlab = "", ylab = "Glocal Active Power (kilowatts)", type = "l")) 
 dev.off() 

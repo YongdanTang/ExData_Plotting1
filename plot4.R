@@ -25,12 +25,12 @@ hhpc2 = hhpc2 %>% select(datetime, Global_active_power:Sub_metering_3)
 hhpc2$datetime <- strptime(hhpc2$datetime, format = "%d/%m/%Y %H:%M:%S")
 
 ## 6. draw the 4th chart that consists of 4 plots
-## Open PNG device; create 'plot4.png' in the working directory
+## Open PNG device; create 'plot4.png' in the working directory. png() by default creats 480 by 480 pixel png file
 ## Create plot and send the plot to the png device
 ## Close the PNG file device
 ## Then plot4.png will be available in the working directory
 
-png(file = "plot4.png")
+png(file = "plot4.png", bg = "transparent")
 ## set up the 2 by 2 plot frame
 par(mfrow = c(2, 2))
 with(hhpc2, {

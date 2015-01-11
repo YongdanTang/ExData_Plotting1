@@ -19,12 +19,12 @@ hhpc2 <- filter(hhpc1, Date == "1/2/2007" | Date == "2/2/2007")
 rm(hhpc1)
 
 ## 5. draw the 1st histogram
-## Open PNG device; create 'plot1.png' in the working directory
+## Open PNG device; create 'plot1.png' in the working directory. png() by default creats 480 by 480 pixel png file
 ## Create plot and send to a file and annotate the plot with col, main and xlab arguments
 ## Close the PNG file device
 ## Then plot1.png is available in the working directory
-png(file = "plot1.png") 
-with(hhpc2, hist(Global_active_power, col = "red", main = "Glocal Active Power", xlab = "Glocal Active Power (kilowatts)")) 
+png(file = "plot1.png", bg = "transparent") 
+with(hhpc2, hist(Global_active_power, col = "red", main = "Global Active Power", xlab = "Glocal Active Power (kilowatts)")) 
 dev.off() 
 
 
